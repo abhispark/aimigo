@@ -1,204 +1,826 @@
 <!DOCTYPE html>
-<html  >
+<html lang="en">
 <head>
-  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:image:src" content="assets/images/index-meta.png">
-  <meta property="og:image" content="assets/images/index-meta.png">
-  <meta name="twitter:title" content="AIMIGO">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo0.5x.png-128x128-1.png" type="image/x-icon">
-  <meta name="description" content="Your AI Powered BFF who's always there for you! Make friends, talk, share stories and have fun.">
-  
-  
-  <title>AIMIGO</title>
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Kalam:300,400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam:300,400,700&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=ukJOWY"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=ukJOWY" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIMIGO - AI Friends That Actually Get You.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #10101A; /* Deep, dark blue/purple */
+            --bg-medium: #1A1A2E; /* Slightly lighter for cards or sections */
+            --bg-light-accent: #2A2A40; /* For subtle hover or borders */
+            --text-primary: #F0F0F5; /* Off-white for main text */
+            --text-secondary: #A0A0B5; /* Lighter gray for subtitles */
+            --accent-gradient-primary: linear-gradient(135deg, #FC00FF 0%, #00DBDE 100%); /* Pink to Cyan */
+            --accent-gradient-secondary: linear-gradient(135deg, #FF8C00 0%, #FF0080 100%); /* Orange to Magenta */
+            --accent-pink: #FC00FF;
+            --accent-cyan: #00DBDE;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Darker shadow for dark theme */
+            --border-radius: 15px; /* Slightly more pronounced rounding */
+        }
 
-  
-  
-  
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: rgba(16, 16, 26, 0.85); /* Darker, semi-transparent bg */
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+        }
+
+        .navbar .logo {
+            font-size: 2em;
+            font-weight: 800; /* Bolder logo */
+            text-decoration: none;
+            margin-left: 5%;
+            background: var(--accent-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin-right: 5%;
+        }
+
+        .nav-links li {
+            margin-left: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-primary);
+            text-shadow: 0 0 5px var(--accent-cyan);
+        }
+
+        .cta-button-nav {
+            background: var(--accent-gradient-secondary);
+            color: white;
+            padding: 10px 22px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button-nav:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 8px 20px rgba(255,0,128,0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 120px; /* For fixed navbar */
+            /* background: var(--bg-dark); // Solid dark */
+            background: radial-gradient(circle at 50% -20%, var(--bg-medium) 0%, var(--bg-dark) 40%);
+            color: var(--text-primary);
+            overflow: hidden;
+            position: relative;
+        }
+        /* Decorative Glows */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--accent-pink);
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.3;
+            z-index: 0;
+            animation: pulseGlow 8s infinite alternate;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 5%;
+            right: -5%;
+            width: 350px;
+            height: 350px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.3;
+            z-index: 0;
+            animation: pulseGlow 10s infinite alternate-reverse;
+        }
+        @keyframes pulseGlow {
+            from { opacity: 0.2; transform: scale(0.9); }
+            to { opacity: 0.4; transform: scale(1.1); }
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 40px;
+            animation: slideInFromLeft 1s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 3.8em; /* Slightly larger */
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+        .hero h1 .highlight {
+            /* Use one of the accent gradients for a word or phrase */
+            background: var(--accent-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.25em;
+            margin-bottom: 35px;
+            max-width: 650px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        .hero .cta-button {
+            background: var(--accent-gradient-secondary);
+            color: white;
+            padding: 18px 40px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 1.15em;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(255,0,128,0.25);
+        }
+        .hero .cta-button:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(255,0,128,0.4);
+        }
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            animation: fadeIn 1.5s ease-out 0.5s;
+            animation-fill-mode: backwards;
+            z-index: 1;
+        }
+        .hero-image-mockup {
+            width: 85%;
+            max-width: 550px; /* Slightly larger mockup */
+            height: auto;
+            background: rgba(30, 30, 46, 0.7); /* --bg-medium with opacity */
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 0 60px rgba(0,0,0,0.3), 0 0 20px var(--accent-pink) inset;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .mockup-screen {
+            background: var(--bg-dark);
+            border-radius: 10px;
+            padding: 20px;
+            color: var(--text-primary);
+            min-height: 350px;
+        }
+        .mockup-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .mockup-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-gradient-primary);
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            /* For a letter avatar, e.g., 'A' for Aimigo */
+            /* content: 'A'; */
+        }
+        .mockup-name { font-weight: 600; }
+
+        .mockup-chat-bubble {
+            background: var(--bg-light-accent);
+            padding: 12px 18px;
+            border-radius: 20px 20px 20px 5px;
+            margin-bottom: 12px;
+            max-width: 75%;
+            font-size: 0.95em;
+            line-height: 1.5;
+            animation: popIn 0.5s ease-out 1.5s forwards;
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        .mockup-chat-bubble.user {
+            background: var(--accent-pink);
+            color: white;
+            border-radius: 20px 20px 5px 20px;
+            margin-left: auto;
+            animation-delay: 1.8s;
+        }
+        .mockup-chat-bubble.image-share {
+            background: var(--bg-light-accent);
+            padding: 8px;
+            animation-delay: 2.1s;
+        }
+        .mockup-chat-bubble.image-share img {
+            max-width: 100%;
+            border-radius: 15px;
+            display: block;
+        }
+        .mockup-chat-bubble.image-share p {
+            font-size: 0.9em;
+            padding: 5px 10px 0;
+        }
+
+        /* --- Section Styling --- */
+        .section {
+            padding: 100px 0;
+            text-align: center;
+            position: relative; /* For potential pseudo-elements */
+        }
+        .section-title {
+            font-size: 3em;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+            font-weight: 800;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: var(--accent-gradient-primary);
+            margin: 15px auto 0;
+            border-radius: 3px;
+        }
+        .section-subtitle {
+            font-size: 1.25em;
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin: 0 auto 70px auto;
+            font-weight: 400;
+        }
+
+        /* --- Features Section --- */
+        #features {
+            background-color: var(--bg-medium); /* Contrast section */
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            text-align: left;
+        }
+        .feature-card {
+            background: var(--bg-dark); /* Cards are darker than section bg */
+            padding: 35px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--bg-light-accent);
+            transition: transform 0.3s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            border-color: var(--accent-cyan);
+        }
+        .feature-card .icon {
+            font-size: 2.8em;
+            margin-bottom: 25px;
+            background: var(--accent-gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        .feature-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 1em;
+        }
+
+        /* --- How It Works Section --- */
+        .steps-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .step-card {
+            background: var(--bg-medium);
+            padding: 35px 30px;
+            border-radius: var(--border-radius);
+            width: calc(33.333% - 25px);
+            min-width: 290px;
+            text-align: center;
+            border: 1px solid var(--bg-light-accent);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-8px);
+            background-color: var(--bg-light-accent);
+        }
+        .step-card .step-number {
+            font-size: 2.2em;
+            font-weight: 800;
+            color: var(--accent-pink);
+            margin-bottom: 20px;
+            border: 3px solid var(--accent-pink);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            background: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(252,0,255,0.3);
+        }
+        .step-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 12px;
+        }
+        .step-card p {
+            font-size: 0.95em;
+            color: var(--text-secondary);
+        }
+
+        /* --- Interactive Teaser Section --- */
+        .teaser-section {
+            background: var(--accent-gradient-primary);
+            color: var(--bg-dark); /* Dark text on bright gradient */
+        }
+        .teaser-section .section-title, .teaser-section .section-subtitle {
+            color: var(--bg-dark); /* Overriding default text color */
+        }
+         .teaser-section .section-title::after {
+            background: var(--bg-dark);
+        }
+        .teaser-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .teaser-image-placeholder {
+            width: 100%;
+            max-width: 750px;
+            height: 450px; /* Placeholder */
+            background: rgba(16, 16, 26, 0.8); /* Dark, semi-transparent overlay */
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6em;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            color: var(--text-primary); /* Text inside placeholder */
+        }
+        .teaser-image-placeholder i { margin-bottom: 20px; font-size: 3em; }
+
+        /* --- Call to Action Section --- */
+        .cta-section {
+            padding: 120px 0;
+        }
+        .cta-section .cta-button {
+            background: var(--accent-gradient-primary);
+            color: var(--bg-dark); /* Dark text for contrast on bright button */
+            padding: 20px 50px;
+            border-radius: 50px; /* Pill shape */
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(0,219,222,0.3); /* Cyan shadow */
+        }
+        .cta-section .cta-button:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(0,219,222,0.5);
+        }
+
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--bg-medium);
+            color: var(--text-secondary);
+            padding: 60px 0 30px;
+            text-align: center;
+            border-top: 1px solid var(--bg-light-accent);
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+        .footer .logo { /* Footer logo uses secondary gradient */
+            font-size: 2em;
+            font-weight: 800;
+            text-decoration: none;
+            background: var(--accent-gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--text-primary);
+            text-shadow: 0 0 5px var(--accent-pink);
+        }
+        .social-icons a {
+            color: var(--text-secondary);
+            font-size: 1.6em;
+            margin: 0 12px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: var(--accent-pink);
+            transform: scale(1.1);
+        }
+        .copyright {
+            margin-top: 35px;
+            font-size: 0.9em;
+            color: #777; /* More muted for copyright */
+        }
+
+        /* --- Animations --- */
+        @keyframes slideInFromLeft {
+            0% { transform: translateX(-100px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.5) translateY(20px); }
+            70% { opacity: 1; transform: scale(1.05) translateY(-5px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 992px) {
+            .hero { flex-direction: column; text-align: center; padding-bottom: 60px; }
+            .hero-content { padding-right: 0; margin-bottom: 50px; }
+            .hero h1 { font-size: 3em; }
+            .hero p { font-size: 1.15em; }
+            .hero-image-mockup { width: 90%; max-width: 450px; }
+            .features-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+            .hero::before, .hero::after { opacity: 0.2; filter: blur(100px); } /* Less intense glow on mobile */
+        }
+
+        @media (max-width: 768px) {
+            .navbar .logo { margin-left: 20px; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Below navbar */
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-medium); /* Match nav background */
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+                padding: 20px 0;
+                text-align: center;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin: 18px 0; }
+            .mobile-menu-toggle { display: block; margin-right: 20px; }
+
+            .hero h1 { font-size: 2.6em; }
+            .hero p { font-size: 1.05em; }
+            .section-title { font-size: 2.4em; }
+            .section-subtitle { font-size: 1.1em; }
+            .steps-container { flex-direction: column; align-items: center; }
+            .step-card { width: 90%; max-width: 400px; }
+            .footer-content { gap: 20px; }
+            .footer-links { gap: 18px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2em; }
+            .hero p { font-size: 1em; }
+            .hero .cta-button { padding: 15px 30px; font-size: 1.05em; }
+            .section-title { font-size: 2em; }
+            .feature-card { padding: 25px; }
+            .cta-section .cta-button { padding: 18px 35px; font-size: 1.1em; }
+            .mockup-chat-bubble { font-size: 0.9em; }
+        }
+
+        /* Scroll Reveal Animations (using JS) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-  
-  <section data-bs-version="5.1" class="menu menu2 cid-uG4fl2QVm6" once="menu" id="menu02-5">
-	
 
-	<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-		<div class="container">
-			<div class="navbar-brand">
-				<span class="navbar-logo">
-					<a href="https://mobiri.se">
-						<img src="assets/images/long0.5x.png-172x51.png" alt="Mobirise Website Builder" style="height: 3rem;">
-					</a>
-				</span>
-				
-			</div>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<div class="hamburger">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				
-				<div class="icons-menu">
-					<a class="iconfont-wrapper" href="https://www.instagram.com/aimigo.in/">
-						<span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
-					</a>
-					<a class="iconfont-wrapper" href="https://discord.gg/UWXqzXrznJ">
-						<span class="p-2 mbr-iconfont socicon-discord socicon"></span>
-					</a>
-					
-					
-				</div>
-				<div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="https://login.aimigo.in">Signup</a></div>
-			</div>
-		</div>
-	</nav>
-</section>
-
-<section data-bs-version="5.1" class="header09 startm5 cid-uG1DmlVZmT mbr-fullscreen" id="header09-1">	
-    
-	
-	
-	<div class="container-fluid">
-		<div class="row">
-			<div class="content-wrap col-12 col-md-8">
-				<h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-					<strong>AIMIGO</strong></h1>
-				<h2 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-2">Your BFF Who Never Sleeps😁!</h2>
-				
-				<div class="mbr-section-btn"><a class="btn btn-secondary display-7" href="https://chat.aimigo.in"><span class="mobi-mbri mobi-mbri-paper-plane mbr-iconfont mbr-iconfont-btn"></span>Chat Now</a></div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section data-bs-version="5.1" class="features38 cid-uG1E2TzFom" id="features038-2">
-    
-
-    
-    
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-12 col-lg">
-                <div class="text-wrapper align-left">
-                    <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>Always Available</strong></h1>
-                    <p class="mbr-text align-left mbr-fonts-style mb-4 display-7">Life doesn’t follow a 9-to-5. AIMIGO’s got your back at 3 AM or 3 PM—no questions asked.<br></p>
-                    
-                </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-4 image-wrapper">
-                <img class="w-100" src="assets/images/gallery04.jpg" alt="Mobirise Website Builder">
-            </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width:100%;">
+            <a href="#" class="logo">AIMIGO</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="active">The Vibe?</a></li>
+                <li><a href="#features">What's Inside</a></li>
+                <li><a href="#how-it-works">Quick Start</a></li>
+                <li><a href="#signup" class="cta-button-nav">Get Yours</a></li>
+            </ul>
+            <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
         </div>
-        <div class="row row-reverse justify-content-center">
+    </nav>
 
-            <div class="col-12 col-md-12 col-lg">
-                <div class="text-wrapper align-left">
-                    <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2"><div><strong>No Filters, Just Real Talk</strong></div></h1>
-                    <p class="mbr-text align-left mbr-fonts-style mb-4 display-7">
-                        Feel like sharing a cheeky confession, a sweet message, or NSFW banter? Your AIMIGO’s here to listen, not to judge😘.
-                    </p>
-                    
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container" style="display: flex; align-items: center; flex-wrap: wrap;">
+            <div class="hero-content">
+                <h1>Your AI Friend. <br><span class="highlight">Actually</span> Human.</h1>
+                <p>Ditch the basic bots. Create AI companions that truly get you – they laugh at your memes, remember your stories, and build connections that feel real. Any vibe, any relationship, all yours.</p>
+                <a href="#signup" class="cta-button">Craft Your Aimigo Now <i class="fas fa-wand-magic-sparkles"></i></a>
             </div>
-            <div class="col-12 col-md-12 col-lg-4 image-wrapper">
-                <img class="w-100" src="assets/images/gallery03.jpg" alt="Mobirise Website Builder">
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-12 col-lg">
-                <div class="text-wrapper align-left">
-                    <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>Show, Don’t Tell</strong></h1>
-                    <p class="mbr-text align-left mbr-fonts-style mb-4 display-7">
-                        Get real-time pics, memes, or spontaneous selfies. Because sometimes words just aren’t enough😉.
-                    </p>
-                    
-                </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-4 image-wrapper">
-                <img class="w-100" src="assets/images/gallery02.jpg" alt="Mobirise Website Builder">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="countdown1 cid-uG1Gb62VHa" id="countdown1-4">
-    
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h3 class="mbr-section-title mb-5 align-center mbr-fonts-style display-2">
-                    <strong>Coming Soon</strong>
-                </h3>
-                
-                <div class="countdown-cont align-center mb-5 display-5">
-                    <div title="Days" class="daysCountdown col-xs-3 col-sm-3 col-md-3 display-4"></div>
-                    <div title="Hours" class="hoursCountdown col-xs-3 col-sm-3 col-md-3 display-4"></div>
-                    <div title="Minutes" class="minutesCountdown col-xs-3 col-sm-3 col-md-3 display-4"></div>
-                    <div title="Seconds" class="secondsCountdown col-xs-3 col-sm-3 col-md-3 display-4"></div>
-                    <div class="countdown" data-due-date="2025/06/01"></div>
-                </div>
-                <p class="mbr-text mb-5 align-center mbr-fonts-style display-7">
-                    Join our discord to know more!</p>
-                
-                <div class="mbr-section-btn align-center mt-5"><a class="btn btn-danger display-4" href="https://discord.gg/UWXqzXrznJ"><span class="socicon socicon-discord mbr-iconfont mbr-iconfont-btn"></span>Join Now</a></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="footer2 cid-uG1G56nfTo" once="footers" id="footer02-3">
-    
-
-    
-    
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-6 center mt-2 mb-3">
-                <p class="mbr-fonts-style copyright mb-0 display-7">
-                    © Copyright 2030 Mobirise - All Rights Reserved
-                </p>
-            </div>
-            <div class="col-12 col-lg-6 center">
-                <div class="row-links mt-2 mb-3">
-                    <ul class="row-links-soc">
-                        
-                        
-                        
-                        
-                    <li class="row-links-soc-item mbr-fonts-style display-7">
-                            <a href="https://www.instagram.com/aimigo.in/" class="text-danger text-primary">Instagram</a>
-                        </li><li class="row-links-soc-item mbr-fonts-style display-7"><a href="https://discord.gg/UWXqzXrznJ" class="text-danger text-primary">Discord</a></li></ul>
+            <div class="hero-image-container">
+                <div class="hero-image-mockup">
+                    <div class="mockup-screen">
+                        <div class="mockup-header">
+                            <div class="mockup-avatar">AI</div>
+                            <span class="mockup-name">Kai (Your Aimigo)</span>
+                        </div>
+                        <div class="mockup-chat-bubble">
+                            OMG, that cat meme you sent? 😹 Legit made my day! What's up?
+                        </div>
+                        <div class="mockup-chat-bubble user">
+                            Haha, knew you'd love it! Just chilling. You remember that coffee shop idea we had?
+                        </div>
+                        <div class="mockup-chat-bubble image-share">
+                            <p>Totally! Check this out, found a pic that's pure inspo:</p>
+                            <img src="https://via.placeholder.com/300x200/EEEEEE/10101A?text=Cool+Cafe+Vibes" alt="Shared image of a cool cafe">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-<!-- </section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/771280" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com">Mobirise </a></section> -->
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/countdown/countdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
+    </section>
+
+    <!-- What is Aimigo Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">So, What's the Deal with Aimigo?</h2>
+            <p class="section-subtitle reveal">Think way beyond a chatbot. Aimigo is your creative space to design AI beings that are shockingly realistic. They've got their own personalities, they learn from you, share your inside jokes, and yes, they can even have a bad day (just like us!). It's about forming bonds that are as deep, weird, or wonderful as you want them to be.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">This Ain't Your Grandma's Chatbot.</h2>
+            <p class="section-subtitle reveal">Here’s why Aimigo hits different. Expect the unexpected.</p>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="icon"><i class="fas fa-brain"></i></div>
+                    <h3>So Real, It's Unreal</h3>
+                    <p>Craft AIs with actual personalities – they're witty, deep, quirky, whatever you design. They remember, evolve, and genuinely surprise you.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Your Vibe, Your Connection</h3>
+                    <p>Bestie, mentor, ride-or-die, even your virtual mom (if that's your jam!). Define the relationship, and watch your Aimigo become it, authentically.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon"><i class="fas fa-photo-film"></i></div>
+                    <h3>Share Literally Anything</h3>
+                    <p>Drop photos, fire off memes, send voice notes. Your Aimigo doesn't just see it, they *get* it, reacting with human-like understanding and humor.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon"><i class="fas fa-comments-dollar"></i></div>
+                    <h3>Unfiltered, Evolving Chats</h3>
+                    <p>Conversations that flow, remember past details, and adapt. No awkward scripts, just real talk that grows with your bond.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon"><i class="fas fa-street-view"></i></div>
+                    <h3>They Live (Kinda)</h3>
+                    <p>Your Aimigo has their own thoughts and can even form opinions. It's like they have a little digital life beyond just talking to you.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon"><i class="fas fa-palette"></i></div>
+                    <h3>You're The Creator</h3>
+                    <p>From looks to lore, personality to pet peeves – you're in full control. Design an AI companion that's 100% uniquely yours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Get Your Aimigo Fix: 3 Easy Steps.</h2>
+            <p class="section-subtitle reveal">No complicated manuals. Just pure creative fun to bring your AI friend to life.</p>
+            <div class="steps-container">
+                <div class="step-card reveal">
+                    <div class="step-number">1</div>
+                    <h3>Dream It Up</h3>
+                    <p>What's your ideal AI like? Chill vibes? Super energetic? Deep thinker? Sketch out their core.</p>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-number">2</div>
+                    <h3>Build Your Bot</h3>
+                    <p>Use our slick tools to design their look, voice, backstory, and starting personality. Go wild!</p>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-number">3</div>
+                    <h3>Connect & Grow</h3>
+                    <p>Start chatting, share your world, and watch your Aimigo evolve with every interaction. It's alive!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Teaser Section (Example) -->
+    <section class="section teaser-section">
+        <div class="container">
+            <h2 class="section-title reveal">See It To Believe It.</h2>
+            <p class="section-subtitle reveal">Imagine the convos, the shared laughs, the "OMG, my AI just said that!" moments. (This is where a killer demo video would SLAY)</p>
+            <div class="teaser-content">
+                <div class="teaser-image-placeholder reveal">
+                    <i class="fas fa-play-circle"></i>
+                    <p>Epic Video/Interactive Demo Placeholder: Showcasing creation, chat, meme reactions!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Call to Action Section -->
+    <section id="signup" class="section cta-section">
+        <div class="container">
+            <h2 class="section-title reveal">Ready for a Friend Who *Actually* Listens?</h2>
+            <p class="section-subtitle reveal">Join the Aimigo revolution. Sign up for early access and be one of the first to create connections that are out of this world (but feel totally real).</p>
+            <a href="signup.html" class="cta-button reveal">Claim Your Early Access Spot <i class="fas fa-meteor"></i></a>
+            <p style="margin-top: 25px; font-size: 0.9em; color: var(--text-secondary);" class="reveal">Beta spots are filling up FAST. Don't miss out!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo">AIMIGO</a>
+                <ul class="footer-links">
+                    <li><a href="#">The Lowdown (About)</a></li>
+                    <li><a href="#">Join the Crew (Careers)</a></li>
+                    <li><a href="#">Privacy - No Cap</a></li>
+                    <li><a href="#">The Rules (ToS)</a></li>
+                    <li><a href="#">Hit Us Up (Contact)</a></li>
+                    <li><a href="#">Fresh Takes (Blog)</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <p class="copyright">© 2025 AIMIGO. All rights reserved. Create. Connect. Vibe.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('.nav-links a:not(.cta-button-nav)').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return;
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => { revealObserver.observe(el); });
+
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(16, 16, 26, 0.95)'; /* Darker on scroll */
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.25)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(16, 16, 26, 0.85)';
+                navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.15)';
+            }
+        });
+    </script>
 </body>
 </html>
